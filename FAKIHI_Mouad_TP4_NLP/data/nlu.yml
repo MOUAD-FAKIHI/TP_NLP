@@ -1,0 +1,41 @@
+version: '3.1'
+
+nlu:
+  - intent: bot_challenge
+    examples: |
+      - Are you really a robot?
+      - Are you human or machine?
+      - Can you prove you're not a person?
+      - Are you a real person?
+
+  - intent: inquire_news
+    examples: |
+      - What's the latest news?
+      - Can you give me some news updates?
+      - Tell me the top headlines.
+      - I want to know the current news.
+      - Fetch the latest news for me.
+
+  - intent: express_gratitude
+    examples: |
+      - Thank you
+      - Thanks a lot
+      - I appreciate it
+      - Grateful for your help
+      - Thanks a bunch
+
+  - intent: inquire_travel_information
+    examples: |
+      - What's the best way to travel to Paris?
+      - Can you provide information about flights to London?
+      - Tell me about transportation options to Tokyo.
+      - I need details on trains to Berlin.
+      - What's the quickest way to get to New York?
+
+  - intent: inquire_recipe
+    examples: |
+      - Give me a recipe for spaghetti bolognese.
+      - Can you suggest a dessert recipe?
+      - I want to cook something with chicken. Any recipes?
+      - Provide me with a vegetarian recipe.
+      - Share a quick and easy recipe.

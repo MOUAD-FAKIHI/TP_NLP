@@ -1,0 +1,39 @@
+stories:
+  - story: explore bot capabilities
+    steps:
+      - user: |
+          What can you do?
+        intent: bot_capabilities
+      - action: utter_bot_capabilities
+
+  - story: inquire about the weather
+    steps:
+      - user: |
+          Hi, how's the weather today?
+        intent: ask_weather_forecast
+        entities:
+          - location: 'city'
+      - action: action_fetch_weather_forecast
+      - action: utter_weather_forecast
+
+  - story: express gratitude
+    steps:
+      - user: |
+          Thank you for your help!
+        intent: express_gratitude
+      - action: utter_youre_welcome
+
+  - story: inquire about travel
+    steps:
+      - user: |
+          What's the best way to get to Paris?
+        intent: inquire_travel_information
+      - action: action_fetch_travel_information
+      - action: utter_travel_information
+
+  - story: challenge bot's identity
+    steps:
+      - user: |
+          Are you really a bot?
+        intent: bot_challenge
+      - action: utter_iamabot

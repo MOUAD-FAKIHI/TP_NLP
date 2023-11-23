@@ -1,0 +1,23 @@
+version: '3.1'
+
+rules:
+  - rule: Respond to greetings with a welcome message
+    steps:
+      - intent: greet
+      - action: utter_welcome
+
+  - rule: Provide help when the user asks for assistance
+    steps:
+      - intent: ask_help
+      - action: utter_provide_help
+
+  - rule: Say goodbye and offer assistance when the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+      - action: utter_offer_assistance
+
+  - rule: Handle inquiries about the bot's capabilities
+    steps:
+      - intent: bot_capabilities
+      - action: utter_bot_capabilities

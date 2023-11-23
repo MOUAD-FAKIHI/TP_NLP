@@ -1,0 +1,49 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_crypto_price
+  - ask_stock_price
+
+entities:
+  - stock
+  - crypto
+  - price
+
+slots:
+  stock:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+      - entity: stock
+      - intent: ask_stock_price
+  crypto:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+      - entity: crypto
+      - intent: ask_crypto_price
+  price:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+      - entity: price
+
+actions:
+  - action_fetch_stock_price
+  - action_fetch_crypto_price
+
+responses:
+  utter_greet:
+  - text: "Hey! How can I assist you?"
+  utter_stock_price:
+  - text: "The current price of {stock} is {price}."
+  utter_crypto_price:
+  - text: "The current price of {crypto} is {price}."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
